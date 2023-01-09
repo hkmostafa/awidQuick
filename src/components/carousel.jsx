@@ -13,19 +13,19 @@ function Ads () {
             stopOnHover={true}
              >
                 <div>
-                    <img src="/images/ad1.jpg"/>
+                    <img src="/images/ad1.jpg" loading="lazy" />
                     
                 </div>
                 <div>
-                    <img src="/images/ad2.jpg" />
+                    <img src="/images/ad2.jpg" loading="lazy"  />
                   
                 </div>
                 <div>
-                    <img src="/images/ad3.jpg" />
+                    <img src="/images/ad3.jpg" loading="lazy"  />
                   
                 </div>
                 <div>
-                    <img src="/images/ad4.jpg" />
+                    <img src="/images/ad4.jpg" loading="lazy" />
                   
                 </div>
             </Carousel>
