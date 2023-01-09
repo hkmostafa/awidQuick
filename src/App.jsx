@@ -3,6 +3,7 @@ import './App.scss'
 import 'animate.css';
 import {BiRightArrow} from 'react-icons/bi'
 import {BsFacebook,BsInstagram} from 'react-icons/bs'
+import Ads from './components/carousel';
 function App() {
 
   const openWhatsapp = ()=>{
@@ -40,6 +41,7 @@ function App() {
     </div>
       <div className='banner'>
       <img src="/images/awidquick.png" alt=""  className='logo animate__animated animate__lightSpeedInLeft'/>
+
         <div className='banner-text '>
           <h2 className='secondaryTitle  animate__animated animate__pulse animate__delay-1s animate__slower	 animate__infinite	'>
           LIVRAISON DES CAMMANDES À DOMICIEL OU AU TRAVAIL 24H/24H
@@ -81,7 +83,7 @@ function App() {
           <BiRightArrow fill='#389b44'/>
           </button>
         </div>
-         <img src="/images/img.jpg" alt="" />    
+       <div className="carousel"><Ads/> </div>
           
       </div> 
       

@@ -212,6 +212,7 @@ $yellowGreen :#ECF87F;
     min-height: 80vh;
     padding-top: 5rem;
     padding-bottom: 2rem;
+    align-items: center;
 }
 
 .banner-text{
@@ -275,7 +276,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     text-align: center;
     border-radius: 0.5rem;
     padding-block: 2rem;
-    
+    padding-inline : 4rem;
     backdrop-filter: blur(1px);
 
 }
@@ -324,7 +325,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     padding-inline : 8rem;
     padding-block : 5rem;
     display : grid;
-    grid-template-columns: 50% auto;
+    grid-template-columns: 60% auto;
 }
 
 .command h5{
@@ -332,12 +333,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     font-size: 2rem;
     color : white
 }
-
+.command .carousel{
+    justify-self: end;
+    width: 70%;
+    border-radius: 0.7rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
 .command button {
     display : flex;
     align-items: center;
     gap : 10px;
-    margin-top : 1rem;
+    margin-top : 2rem;
     font-family: $JosefinRegular;
     font-size: 1.3rem;
     color : #389b44;
@@ -355,12 +361,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     transform : scale(1.05)
 
 }
-.command img{
-    width : 60%;
-    border-radius: 0.7rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    justify-self: end;
-}
+
 .shape-divider3 {
     position: absolute;
     top: 0;
@@ -498,8 +499,8 @@ background: linear-gradient(180deg, rgba(170,227,177,1) 28%, $limePrimary 62%);
 
     .steps{
         grid-template-columns: 1fr;
-        gap :2rem;
-        padding-block : 2rem;
+        gap :1rem;
+        padding-block : 0.5rem;
     }
     .step {
         h4{
@@ -528,12 +529,13 @@ background: linear-gradient(180deg, rgba(170,227,177,1) 28%, $limePrimary 62%);
             margin-bottom : 1rem;
         }
         button{
+            margin-bottom : 1rem;
             font-size: 1rem;
             padding-inline: 2rem;
             padding-block: 0.7rem;
         }
-        img{
-            width: 80%;
+        .carousel{
+            width: 90%;
             justify-self: center;
         }
     }
