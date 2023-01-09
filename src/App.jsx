@@ -30,7 +30,7 @@ function App() {
         <h4><a href="https://api.whatsapp.com/send/?phone=212661461262&text&type=phone_number&app_absent=0" target={'_blank'}>+212 661 46 1262</a></h4>
         </div>
         
-       <img src="/images/greenlogo.png" alt="" className='greenlogo animate__animated animate__pulse animate__delay-1s animate__slow'  />
+       <img src="/images/greenlogo.png" alt="" className='greenlogo animate__animated animate__pulse animate__delay-3s animate__slower'  />
        </div> 
        
        <div class="shape-divider3">
@@ -54,15 +54,15 @@ function App() {
     </svg>
   </div>
       <div className='steps' ref={steps}>
-        <div  className={`step  ${stepsVisible?'show':'hidden'}`}>
+        <div  className={`step  ${stepsVisible?'animate__animated animate__bounceIn  ':''}`}>
           <h4>Step 1</h4>
           <h2>Choisir</h2>
         </div>
-        <div  className={`step ${stepsVisible?'show':'hidden'}`}>
+        <div  className={`step ${stepsVisible?'animate__animated animate__bounceIn animate__delay-1s ':''}`}>
           <h4>Step 2</h4>
           <h2>Demander</h2>
         </div>
-        <div  className={`step  ${stepsVisible?'show':'hidden'}`}>
+        <div  className={`step  ${stepsVisible?'animate__animated animate__bounceIn animate__delay-2s':''}`}>
           <h4>Step 3</h4>
           <h2>Recevoir</h2>
         </div>
