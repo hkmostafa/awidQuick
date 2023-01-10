@@ -4,6 +4,7 @@ import 'animate.css';
 import {BiRightArrow} from 'react-icons/bi'
 import {BsFacebook,BsInstagram} from 'react-icons/bs'
 import Ads from './components/carousel';
+import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 function App() {
 
   const openWhatsapp = ()=>{
@@ -15,12 +16,20 @@ function App() {
   useEffect(()=>{
     const observer = new IntersectionObserver((entries)=>{
       const entry = entries[0];
-      setStepsVisible(entry.isIntersecting);
-      
-    })
+     
+      if (entry.boundingClientRect.top > 0) {
+        if (entry.isIntersecting) {
+          setStepsVisible(true);
+        }
+        else{
+          setStepsVisible(false)
+        }
+    }})
     observer.observe(steps.current);
-    
-  },[])
+    return () => {
+      observer.unobserve(steps.current);
+    };
+  },[stepsVisible])
   return (
     <div className="App">
        <div className='contact'>
@@ -56,15 +65,17 @@ function App() {
     </svg>
   </div>
       <div className='steps' ref={steps}>
-        <div  className={`step  ${stepsVisible?'animate__animated animate__bounceIn  ':''}`}>
+        <div  className={`step  ${stepsVisible?'  shown':''}`}>
           <h4>Step 1</h4>
           <h2>Choisir</h2>
         </div>
-        <div  className={`step ${stepsVisible?'animate__animated animate__bounceIn animate__delay-1s ':''}`}>
+        <span className={`arrow ${stepsVisible?'  shown':''}`}> <BsFillArrowRightCircleFill fill='#3fc851' size={50}/></span>
+        <div  className={`step ${stepsVisible?'  shown':''}`}>
           <h4>Step 2</h4>
           <h2>Demander</h2>
         </div>
-        <div  className={`step  ${stepsVisible?'animate__animated animate__bounceIn animate__delay-2s':''}`}>
+        <span className={`arrow ${stepsVisible?'  shown':''}`}> <BsFillArrowRightCircleFill fill='#3fc851' size={50}/></span>
+        <div  className={`step  ${stepsVisible?'  shown':''}`}>
           <h4>Step 3</h4>
           <h2>Recevoir</h2>
         </div>
@@ -78,6 +89,7 @@ function App() {
     </div>
       <div className='command'>
         <div>
+          
           <h5>Livraison et récupération de vos affaires à la laverie</h5>
           <button onClick={openWhatsapp}>Commander 
           <BiRightArrow fill='#389b44'/>
@@ -86,7 +98,7 @@ function App() {
        <div className="carousel"><Ads/> </div>
           
       </div> 
-      
+     
         <div className='servicesSection'>
         <h2 className='secondaryTitle' style={{paddingTop : 50}}>
         Rapidité et Qualité
@@ -98,10 +110,13 @@ function App() {
             <img src="/images/burgerking.png" alt="" className="service" />
           </div>
         </div>
-        <div class="shape-divider4">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-    </svg>
+        <div className="delivery">
+          <img src='/images/livreur.jpg'/>
+          <div className='delivery-text'>
+            <h2>Notre équipe est toujours à votre service !</h2>
+          <h4>Passez votre commande aujourd'hui et nous vous livrerons de la manière la plus rapide </h4>
+          </div>
+          
       </div>
          <div className="footer">
         <h3>CONTACTER NOUS</h3>  
