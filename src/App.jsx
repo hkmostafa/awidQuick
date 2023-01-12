@@ -5,6 +5,7 @@ import {BiRightArrow} from 'react-icons/bi'
 import {BsFacebook,BsInstagram} from 'react-icons/bs'
 import Ads from './components/carousel';
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
+import AwidMap from './components/map';
 function App() {
 
   const openWhatsapp = ()=>{
@@ -33,9 +34,9 @@ function App() {
   return (
     <div className="App">
        <div className='contact'>
-        <a href='https://www.facebook.com/AwidQuick' className='socials'><BsInstagram size={20}/></a>
-        <a href='https://www.instagram.com/awidquick/' className='socials'><BsFacebook size={20}/></a>
-        <div class="links">
+        <a href='https://www.instagram.com/awidquick/' className='socials'><BsInstagram size={20}/></a>
+        <a href='https://www.facebook.com/AwidQuick' className='socials'><BsFacebook size={20}/></a>
+        <div className="links">
           <h4><a href="mailto: contact@awidquick.com"   target="_blank">contact@awidquick.com</a></h4>
         <h4><a href="https://api.whatsapp.com/send/?phone=212661461262&text&type=phone_number&app_absent=0" target={'_blank'}>+212 661 46 1262</a></h4>
         </div>
@@ -43,9 +44,9 @@ function App() {
        <img src="/images/greenlogo.png" alt="" className='greenlogo animate__animated animate__pulse animate__delay-3s animate__slower'  />
        </div> 
        
-       <div class="shape-divider3">
+       <div className="shape-divider3">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" class="shape-fill"></path>
+        <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" className="shape-fill"></path>
     </svg>
     </div>
       <div className='banner'>
@@ -119,11 +120,26 @@ function App() {
           
       </div>
          <div className="footer">
-        <h3>CONTACTER NOUS</h3>  
-         <h4>contact@awidquick.com</h4>
-        <h4>+212 661 46 1262</h4>
-        <h4>AGADIR, MAROC</h4>
+         <div className='footer-left'>
+         <img src="/images/greenlogo.png" alt=""/>
+          <div className='download'>
+            <img src="/images/googleplay.png" alt="" />
+            <img src="/images/appstore.png" alt="" />
+          </div>
+         </div>
+          <div className='footer-center'> 
+            <h3>CONTACTER NOUS</h3>  
+            <h4>contact@awidquick.com</h4>
+            <h4>+212 661 46 1262</h4>
+            <h4>AGADIR, MAROC</h4>
+            <h3>SUIVEZ NOUS</h3>
+            <a href='https://www.instagram.com/awidquick/' className='socials' ><BsInstagram size={20}/><h4>Instagram</h4></a>
+            <a href='https://www.facebook.com/AwidQuick' className='socials'><BsFacebook size={20}/><h4>Facebook</h4></a>
+          </div>
+        
+          <div className='footer-right'><AwidMap/></div>
           </div> 
+        
     </div>
   )
 }
