@@ -1,0 +1,70 @@
+$JosefinLight : 'Josefin Light';
+$JosefinBold : 'Josefin Bold';
+$JosefinRegular : 'Josefin Regular';
+$dancingBold : 'Dancing Bold';
+$dancingRegular : 'Dancing Regular';
+
+//Colors : 
+
+$limePrimary : #3fc851;
+$limeSecondary : #AAE3B1;
+$white : 'white';
+$black : 'black';
+$yellowGreen :#FFDA84;
+
+.mapboxgl-popup{
+    border-radius: 0.3rem;
+    overflow: hidden;
+    border: none;
+   
+
+}
+
+.mapboxgl-popup-content{
+    display : grid;
+    grid-template-columns: 90% auto;
+    padding : 0;
+    
+}
+.mapboxgl-popup-content>div{
+    padding-block : 0.5rem;
+    padding-inline: 0.5rem;
+    border :none;
+
+}
+
+
+
+.mapboxgl-popup-tip{
+    display : none;
+
+}
+.popup{
+    text-align: center;
+}
+.popup .mapboxgl-popup-close-button{
+    background-color: #3fc851;
+    padding-inline :0.5rem;
+    padding-inline: 0.1rem;
+height: 50%;
+    font-size: large;
+    position:initial;
+    width: 100%;
+    overflow: hidden;
+    
+
+}
+.popup a{
+    font-family: $JosefinRegular;
+    font-size: 0.8rem;
+    border: none;
+    color : black;
+    transform: scale(1);
+    transition: color 200ms;
+}
+.popup a:hover{
+transition: scale(1.05);
+    color : $limePrimary
+
+}
+

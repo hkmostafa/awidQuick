@@ -1,0 +1,89 @@
+
+
+//Fonts 
+
+$JosefinLight : 'Josefin Light';
+$JosefinBold : 'Josefin Bold';
+$JosefinRegular : 'Josefin Regular';
+$dancingBold : 'Dancing Bold';
+$dancingRegular : 'Dancing Regular';
+
+//Colors : 
+
+$limePrimary : #3fc851;
+$limeSecondary : #AAE3B1;
+$white : 'white';
+$black : 'black';
+$yellowGreen :#FFDA84;
+
+
+.contact{
+    display : flex;
+    gap : 3rem;
+    justify-items: flex-end;
+    align-items: center;
+    position : absolute;
+    right : 3rem;
+    z-index: 11111;
+    top : 10px;
+}
+.links{
+    display: flex;
+    gap : 3rem;
+    flex-direction: row;
+}
+.contact h4{
+    font-family: $JosefinLight;
+}
+.contact h4:hover{
+    color : $limePrimary
+}
+.greenlogo{
+    cursor : pointer;
+    width : 5rem;
+    aspect-ratio: 1;
+}
+
+
+.shape-divider3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.shape-divider3  svg {
+    position: relative;
+    display: block;
+    width: calc(128% + 1.3px);
+    height: 110px;
+}
+.shape-divider3 .shape-fill {
+    fill: #FFFFFF;
+}
+
+@media(max-width : 768px){
+    .contact{
+     justify-content: flex-end;
+     right : 3%;
+     gap : 2rem;
+     padding-left: 1rem;
+    }
+    
+    .contact h4{
+     
+     font-size: smaller;
+ }
+     .links{
+         flex-direction: column;
+         gap : 0.5rem;
+     }
+     .shape-divider3  svg {
+        position: relative;
+        right : 100px;
+        display: block;
+        width: calc(130% + 100px);
+        height: 110px;
+    }
+}

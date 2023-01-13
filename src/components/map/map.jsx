@@ -1,12 +1,12 @@
+import './map.scss'
 import ReactMapGL, {Marker,Popup} from "react-map-gl";
-import Map from "react-map-gl";
 import {MdLocationPin} from 'react-icons/md'
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 function AwidMap() {
     const [showPopup, setShowPopup] = useState(false);
     const onChangePopup = (e) => {
         e.stopPropagation();
-        setShowPopup(true);
+        setShowPopup(!showPopup);
     }
     
     
@@ -22,6 +22,7 @@ function AwidMap() {
     mapboxAccessToken  = "pk.eyJ1IjoiamVlenphcyIsImEiOiJjbDNyYmtjbjYwNnZoM2NvMDluczhhcHFrIn0.LTXCT43tTenja5zSBBThbg"
     minZoom={11}
     maxZoom={15}
+    doubleClickZoom={false}
     style={{borderRadius : 10, boxShadow: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
     }}
     >
@@ -30,11 +31,11 @@ function AwidMap() {
     </Marker>
     {showPopup &&  <Popup latitude={'30.3987125'} longitude={'-9.5622969'}
         anchor="bottom"
-        offset={30}
-        style={{width :200, padding : 20, textAlign: "center"}}
+        className='popup'
         closeOnClick={true}
+        offset={20}
         onClose={() => setShowPopup(false)}>
-        <a href="https://www.google.com/maps?ll=30.40878,-9.5601&z=11&t=m&hl=en-US&gl=US&mapclient=embed&q=9CXQ%2BF3P+Agadir@30.3987125,-9.5622969" target={"_blank"}>Afficher dans Google maps</a>
+        <a href="https://www.google.com/maps?ll=30.40878,-9.5601&z=11&t=m&hl=en-US&gl=US&mapclient=embed&q=9CXQ%2BF3P+Agadir@30.3987125,-9.5622969" target={"_blank"} >Afficher dans Google maps</a>
       </Popup>}
    
    
