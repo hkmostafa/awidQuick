@@ -11,3 +11,110 @@ $limeSecondary : #AAE3B1;
 $white : 'white';
 $black : 'black';
 $yellowGreen :#FFDA84;
+
+
+
+    .title_container{
+        background: rgb(63,200,81);
+        background: linear-gradient(180deg, rgba(63,200,81,1) 42%, rgba(252,254,252,1) 95%);
+        padding-block-start : 12rem;
+        padding-inline: 10%;
+        padding-block-end : 10%;
+        h3{
+            font-size: 3rem;
+            font-family: $JosefinRegular;
+            color : white
+        }
+    }    
+    .cards_container{
+        display : grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-inline: 10%;
+        margin-block : 7%;
+        gap : 5%;
+        .restaucard{           
+            text-align: center;
+            grid-template-rows: 30% auto;
+            box-shadow: rgba(0, 0, 0, 0.5) 12px 25px 50px -12px;
+            margin-bottom : 15%;
+
+            .restaulogo{
+                overflow: hidden;
+
+                z-index: 111;
+                position : relative;
+                top : -27%;
+                left : 10%;
+                margin-bottom: -31%;
+                width: 25%;
+                border-radius: 50%;
+                border-top : 3px solid $limePrimary
+            }
+            .bannertext{
+                overflow: hidden;
+
+                display : grid;
+                img{
+                  
+                border-top-left-radius: 1.5rem;
+                border-top-right-radius: 1.5rem;
+                
+                width: 100%;
+                }
+                .gradient{
+                    position : relative;
+                    top: -100%;
+                    margin-top : -40%;
+                    padding-block-start:10%;
+                    background: hsla(42, 100%, 76%, 1);
+
+                    background: linear-gradient(0deg, hsla(42, 100%, 76%, 1) 0%, hsla(48, 100%, 99%, 0) 60%, hsla(0, 0%, 100%, 0) 100%);
+
+                }
+                h4{
+
+                    background-color:$yellowGreen;
+                    padding-block-start : 10%;
+                    padding-block-end : 10%;
+                    align-self: center;
+                    font-size: clamp(1rem, 0.1207rem + 1.8391vw, 1.5rem);
+                    font-family: $JosefinRegular;
+                }
+       
+            }
+           
+        }
+        
+    }
+
+
+@media(max-width : 1024px){
+    .cards_container{
+        grid-template-columns: 1fr 1fr;
+        padding-inline: 5%;
+    }
+}
+
+
+
+@media(max-width : 765px){
+    .container{
+        margin-bottom :50%
+    }
+    
+    .title_container{
+
+        padding-block-start : 12rem;
+        padding-inline: 10%;
+        padding-block-end : 20%;
+        h3{
+            font-size: 2rem;
+            font-family: $JosefinRegular;
+            color : white
+        }
+    }    
+    .cards_container{
+        grid-template-columns: 1fr ;
+        padding-inline: 10%;
+    }
+}

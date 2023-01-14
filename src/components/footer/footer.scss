@@ -90,7 +90,8 @@ $yellowGreen :#FFDA84;
     }
     .footer-center{
         display : flex;
-        align-items: center;
+        padding-top : 5%;
+        align-items: flex-start;
         grid-column-start: 2;
         grid-column-end: 4;
         gap : 4rem;
