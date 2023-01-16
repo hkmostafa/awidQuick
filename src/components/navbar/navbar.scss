@@ -38,6 +38,11 @@ $yellowGreen :#FFDA84;
 .contact h4:hover{
     color : $limePrimary
 }
+
+.socials{
+    display: flex;
+    gap : 2rem;
+}
 .greenlogo{
     cursor : pointer;
     width : 5rem;
@@ -67,7 +72,7 @@ $yellowGreen :#FFDA84;
     .contact{
      justify-content: flex-end;
      right : 3%;
-     gap : 2rem;
+     gap : 1.5rem;
      padding-left: 1rem;
     }
     
@@ -76,6 +81,7 @@ $yellowGreen :#FFDA84;
      font-size: smaller;
  }
      .links{
+        align-items: center;
          flex-direction: column;
          gap : 0.5rem;
      }
@@ -85,5 +91,8 @@ $yellowGreen :#FFDA84;
         display: block;
         width: calc(130% + 100px);
         height: 110px;
+    }
+    .socials{
+        gap :1rem;
     }
 }

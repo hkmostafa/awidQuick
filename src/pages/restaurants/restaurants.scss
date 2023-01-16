@@ -1,9 +1,11 @@
 $JosefinLight : 'Josefin Light';
 $JosefinBold : 'Josefin Bold';
 $JosefinRegular : 'Josefin Regular';
-$dancingBold : 'Dancing Bold';
-$dancingRegular : 'Dancing Regular';
 
+$ralewayLight : 'ralewayLight';
+$ralewayBold : 'ralewayBold';
+
+$ralewayRegular : 'ralewayRegular';
 //Colors : 
 
 $limePrimary : #3fc851;
@@ -28,20 +30,21 @@ $yellowGreen :#FFDA84;
     }    
     .cards_container{
         display : grid;
+        padding-inline : 10%;
+        margin-block-end : 10%;
         grid-template-columns: repeat(3,1fr);
-        margin-inline: 10%;
-        margin-block : 7%;
-        gap : 5%;
-        .restaucard{           
+
+        gap : 10%;
+        .restaucard{    
+            
             text-align: center;
             grid-template-rows: 30% auto;
             box-shadow: rgba(0, 0, 0, 0.5) 12px 25px 50px -12px;
-            margin-bottom : 15%;
-
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            margin-bottom : 10%;
+            transition : transform 300ms;
             .restaulogo{
-                overflow: hidden;
-
-                z-index: 111;
                 position : relative;
                 top : -27%;
                 left : 10%;
@@ -53,45 +56,73 @@ $yellowGreen :#FFDA84;
             .bannertext{
                 overflow: hidden;
 
+              
                 display : grid;
                 img{
                   
-                border-top-left-radius: 1.5rem;
-                border-top-right-radius: 1.5rem;
-                
+                    border-top-right-radius: 1rem;
                 width: 100%;
                 }
-                .gradient{
-                    position : relative;
-                    top: -100%;
-                    margin-top : -40%;
-                    padding-block-start:10%;
-                    background: hsla(42, 100%, 76%, 1);
-
-                    background: linear-gradient(0deg, hsla(42, 100%, 76%, 1) 0%, hsla(48, 100%, 99%, 0) 60%, hsla(0, 0%, 100%, 0) 100%);
-
-                }
+             
                 h4{
+                    font-family: $ralewayBold;
+                    border-bottom-left-radius: 1rem;
+                    border-bottom-right-radius: 1rem;
 
                     background-color:$yellowGreen;
                     padding-block-start : 10%;
                     padding-block-end : 10%;
                     align-self: center;
-                    font-size: clamp(1rem, 0.1207rem + 1.8391vw, 1.5rem);
-                    font-family: $JosefinRegular;
+                    font-size: clamp(1.2rem, 0.9483rem + 0.7356vw, 1.4rem);               
+                    
                 }
-       
+                
             }
            
         }
         
+        .restaucard:hover{
+            transform : scale(1.05);
+            cursor: pointer;
+        }
+        
     }
 
+    .menu{
+        position: absolute;
+        border-radius: 1rem;
 
+        top: 20%;
+        margin-inline : 20%;
+        padding : 2%;
+        background-color: hsla(42, 100%, 76%, 0.8);
+
+        .closebutton{
+            position: absolute;
+            top : 0;
+            right : 3px;   
+            cursor: pointer;   
+            
+        }
+    }
+    
 @media(max-width : 1024px){
+    .title_container{
+        padding-block-end : 15%;
+
+    }
+
     .cards_container{
         grid-template-columns: 1fr 1fr;
         padding-inline: 5%;
+        padding-block-end: 15% ;
+        padding-inline: 10%;
+    }
+
+    .menu{
+        margin-inline : 10%;
+
+        padding : 2%;
     }
 }
 
@@ -116,5 +147,12 @@ $yellowGreen :#FFDA84;
     .cards_container{
         grid-template-columns: 1fr ;
         padding-inline: 10%;
+        padding-block-end: 60%;
+        .restaucard{
+            margin-bottom: 0;
+        }
+    }
+    .menu{
+        margin-inline : 5%;
     }
 }

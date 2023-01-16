@@ -7,8 +7,11 @@ function Navbar(){
     return  (    
     <> 
     <div className='contact'>
-    <a href='https://www.instagram.com/awidquick/' className='socials'><BsInstagram size={20}/></a>
-    <a href='https://www.facebook.com/AwidQuick' className='socials'><BsFacebook size={20}/></a>
+      <div className='socials'>
+      <a href='https://www.instagram.com/awidquick/'  target="_blank"  ><BsInstagram size={20}/></a>
+    <a href='https://www.facebook.com/AwidQuick'  target="_blank" ><BsFacebook size={20}/></a>
+      </div>
+    
     <div className="links">
       <h4><a href="mailto: contact@awidquick.com"   target="_blank">contact@awidquick.com</a></h4>
     <h4><a href="https://api.whatsapp.com/send/?phone=212661461262&text&type=phone_number&app_absent=0" target={'_blank'}>+212 661 46 1262</a></h4>

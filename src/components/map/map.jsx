@@ -27,7 +27,7 @@ function AwidMap() {
     }}
     >
     <Marker key="1" latitude={'30.3987125'} longitude={'-9.5622969'} anchor="center" >
-    <button  style={{border : 'none',background: 'transparent',cursor:'pointer'}} onClick={onChangePopup}><MdLocationPin size={40} fill="#3fc851"/></button>
+    <button  style={{border : 'none',background: 'transparent',cursor:'pointer'}} onClick={onChangePopup}><MdLocationPin size={40}  fill="#3fc851"/></button>
     </Marker>
     {showPopup &&  <Popup latitude={'30.3987125'} longitude={'-9.5622969'}
         anchor="bottom"

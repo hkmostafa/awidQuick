@@ -37,42 +37,70 @@
     font-display: swap;
 }
 
-//DancingScript
+
+//Raleway
 @font-face {
-    font-family: 'Dancing Bold';
-    src: url('./assets/fonts/DancingScript/DancingScript-Bold.woff2') format('woff2'),
-        url('./assets/fonts/DancingScript/DancingScript-Bold.woff') format('woff');
+    font-family: 'ralewayBold';
+    src: url('./assets/fonts/Raleway/Raleway-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Raleway/Raleway-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Dancing Medium';
-    src: url('./assets/fonts/DancingScript/DancingScript-Medium.woff2') format('woff2'),
-        url('./assets/fonts/DancingScript/DancingScript-Medium.woff') format('woff');
-    font-weight: 500;
+    font-family: 'ralewayLight';
+    src: url('./assets/fonts/Raleway/Raleway-Light.woff2') format('woff2'),
+        url('./assets/fonts/Raleway/Raleway-Light.woff') format('woff');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Dancing SemiBold';
-    src: url('./assets/fonts/DancingScript/DancingScript-SemiBold.woff2') format('woff2'),
-        url('./assets/fonts/DancingScript/DancingScript-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Dancing Regular';
-    src: url('./assets/fonts/DancingScript/DancingScript-Regular.woff2') format('woff2'),
-        url('./assets/fonts/DancingScript/DancingScript-Regular.woff') format('woff');
+    font-family: 'ralewayRegular';
+    src: url('./assets/fonts/Raleway/Raleway-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Raleway/Raleway-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 
+//Lato 
+@font-face {
+    font-family: 'Lato Bold';
+    src: url('./assets/fonts/Lato/Lato-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Lato/Lato-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('./assets/fonts/Lato/Lato-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Lato/Lato-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato Black';
+    src: url('./assets/fonts/Lato/Lato-Black.woff2') format('woff2'),
+        url('./assets/fonts/Lato/Lato-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Lato Light';
+    src: url('./assets/fonts/Lato/Lato-Light.woff2') format('woff2'),
+        url('./assets/fonts/Lato/Lato-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
 

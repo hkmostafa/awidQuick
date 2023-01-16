@@ -178,3 +178,10 @@ $yellowGreen :#FFDA84;
         }
     }
 }
+
+@media(max-width : 568px){
+    .footer-center{
+        flex-direction: column;
+        gap :1rem;
+    }   
+}

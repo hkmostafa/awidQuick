@@ -1,9 +1,9 @@
 import './home.scss';
 import 'animate.css';
 import { useState,useRef, useEffect} from 'react'
-import {BiRightArrow} from 'react-icons/bi'
+import {MdOutlineShoppingCart} from 'react-icons/md'
 import Ads from '../../components/carousel/carousel';
-import {BsFillArrowRightCircleFill} from 'react-icons/bs'
+import {BsFillArrowRightCircleFill, BsFillArrowDownCircleFill} from 'react-icons/bs'
 
 function Home(){
     const openWhatsapp = ()=>{
@@ -40,7 +40,9 @@ function Home(){
           <h2 className='secondaryTitle  animate__animated animate__pulse animate__delay-1s animate__slower	 animate__infinite	'>
           LIVRAISON DES CAMMANDES À DOMICIEL OU AU TRAVAIL 24H/24H
           </h2>
+         
         </div>
+      
       </div>
       <div className="shape-divider1">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -51,17 +53,21 @@ function Home(){
   </div>
       <div className='steps' ref={steps}>
         <div  className={`step  ${stepsVisible?'  shown':''}`}>
-          <h4>Step 1</h4>
+          <h4>Etape 1</h4>
           <h2>Choisir</h2>
         </div>
         <span className={`arrow ${stepsVisible?'  shown':''}`}> <BsFillArrowRightCircleFill fill='#3fc851' size={50}/></span>
+        <span className={`arrowmobile ${stepsVisible?'  shown':''}`}> <BsFillArrowDownCircleFill fill='#3fc851' size={50}/></span>
+
         <div  className={`step ${stepsVisible?'  shown':''}`}>
-          <h4>Step 2</h4>
+          <h4>Etape 2</h4>
           <h2>Demander</h2>
         </div>
         <span className={`arrow ${stepsVisible?'  shown':''}`}> <BsFillArrowRightCircleFill fill='#3fc851' size={50}/></span>
+        <span className={`arrowmobile ${stepsVisible?'  shown':''}`}> <BsFillArrowDownCircleFill fill='#3fc851' size={50}/></span>
+
         <div  className={`step  ${stepsVisible?'  shown':''}`}>
-          <h4>Step 3</h4>
+          <h4>Etape 3</h4>
           <h2>Recevoir</h2>
         </div>
       </div>
@@ -75,31 +81,45 @@ function Home(){
       <div className='command'>
         <div>
           
-          <h5>Livraison et récupération de vos affaires à la laverie</h5>
-          <button onClick={openWhatsapp}>Commander 
-          <BiRightArrow fill='#389b44'/>
-          </button>
+          <h2>Livraison Express</h2>
+          <h4>Recevez vos commandes en un rien de temps avec notre service de livraison rapide</h4>
+          <div className='animate__animated animate__headShake animate__delay-5s animate__slower  animate__infinite'><button onClick={openWhatsapp} className="">Commander 
+          <MdOutlineShoppingCart fill='#389b44' fontWeight={900}/>
+          </button></div>
+          
         </div>
        <div className="carousel"><Ads/> </div>
           
       </div> 
      
         <div className='servicesSection'>
-        <h2 className='secondaryTitle' style={{paddingTop : 50}}>
-        Rapidité et Qualité
+          <div><h2 className='secondaryTitle' style={{paddingTop : 50}}>
+        Nos specialités
           </h2> 
+          <h4>Plus de temps perdu à faire les courses, commandez en ligne et faites-vous livrer à domicile</h4></div>
+        
           <div className='services'>
-            <img src="/images/courses.png" alt="" className="service" />
-            <img src="/images/cadeaux.png" alt="" className="service" />
-            <img src="/images/pizzahut.png" alt="" className="service" />
-            <img src="/images/burgerking.png" alt="" className="service" />
+            <div className="service">
+              <h4>Food</h4>
+              <h5>Consultez nos menus et choisissez ce que vous désirez</h5>
+            </div>
+            <div className="service">
+              <h4>Courses</h4>
+              <h5>Nous vous apporterons toutes les courses dont vous avez besoin</h5>
+
+              </div>
+            <div className="service">
+              <h4>Cadeaux</h4>
+              <h5>choisissez un cadeau pour votre bien-aimé</h5>
+
+              </div>
           </div>
         </div>
         <div className="delivery">
           <img src='/images/livreur.jpg'/>
           <div className='delivery-text'>
-            <h2>Notre équipe est toujours à votre service !</h2>
-          <h4>Passez votre commande aujourd'hui et nous vous livrerons de la manière la plus rapide </h4>
+            <h2>Toujours à votre service !</h2>
+          <h4>Notre équipe est dédiée à assurer la satisfaction de nos clients en veillant à ce que chaque colis soit livré en toute sécurité et à temps. </h4>
           </div>
           
       </div>
