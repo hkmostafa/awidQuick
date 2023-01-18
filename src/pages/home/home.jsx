@@ -26,7 +26,8 @@ function Home(){
       }})
       observer.observe(steps.current);
       return () => {
-        observer.unobserve(steps.current);
+        if(steps.current){  observer.unobserve(steps.current);
+        }
       };
     },[stepsVisible])
     return(
@@ -35,10 +36,10 @@ function Home(){
       
       <div className='banner'>
       <img src="/images/awidquick.png" alt=""  className='logo animate__animated animate__lightSpeedInLeft' />
-
+      
         <div className='banner-text '>
           <h2 className='secondaryTitle  animate__animated animate__pulse animate__delay-1s animate__slower	 animate__infinite	'>
-          LIVRAISON DES CAMMANDES À DOMICIEL OU AU TRAVAIL 24H/24H
+          LIVRAISON DES COMMANDES À DOMICIEL OU AU TRAVAIL 24H/24H
           </h2>
          
         </div>

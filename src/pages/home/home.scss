@@ -31,26 +31,22 @@ $yellowGreen :#FFDA84;
     background-color: $limePrimary ;
     padding-inline-start: 4rem;
     padding-inline-end: 5rem;
-    min-height: 80vh;
-    padding-top: 6%;
+    min-height: 90vh;
+    padding-top: 7%;
     padding-bottom: 3%;
     align-items: center;
 }
 
 .banner-text{
     align-self: center;
-    padding-inline-start : 3rem;
+    padding-inline-start : 4rem;
 }
 
-.banner-text h4{
-    color : white;
-    font-family: $ralewayRegular;
-}
 
 
 .secondaryTitle{
     font-family: $JosefinBold;
-    font-size: 2.5rem;
+font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     color : white;
 }
 
@@ -321,6 +317,8 @@ $yellowGreen :#FFDA84;
 }
 .servicesSection  .secondaryTitle{
         color : black;
+        padding-bottom : 1rem;
+
         font-family: $JosefinBold;
         font-size: clamp(1.5rem, 0.2414rem + 3.6782vw, 3.4rem);
 
@@ -328,6 +326,7 @@ $yellowGreen :#FFDA84;
 
 .servicesSection h4{
     font-family: $ralewayLight;
+
     font-size :clamp(1rem, -0.4552rem + 2.2069vw, 1.5rem);
 }
 
@@ -343,7 +342,7 @@ $yellowGreen :#FFDA84;
     display : flex;
     flex-direction: column;
     padding-inline : 10%;
-    padding-block: 5%;
+    padding-block: 10%;
     border-radius: 1rem;
     color : white;
     background-color: #3f9c51;
@@ -395,7 +394,8 @@ $yellowGreen :#FFDA84;
    .banner{
 
     grid-template-columns: 1fr;
-  
+    min-height: none;
+
     padding-inline: 2rem;
     
     padding-top: 10rem;
@@ -432,10 +432,10 @@ $yellowGreen :#FFDA84;
     .step {
 
         h4{
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         h2{
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
     }
     .arrowmobile{
@@ -458,9 +458,8 @@ $yellowGreen :#FFDA84;
         padding-block-start : 2rem;
         gap: 10%;
 
-        h5{
-            font-size : 1.5rem;
-            margin-bottom : 1rem;
+        h2{
+            font-size : 1.8rem;
         }
         button{
             margin-bottom : 1rem;
@@ -476,22 +475,31 @@ $yellowGreen :#FFDA84;
   
 
     .servicesSection{
-       
+        gap : 6%;
         padding-inline : 12%;
        .secondaryTitle{
-        font-size: 1.4rem;
+        font-size: 1.9rem;
        }
+       
+    
     }
 
     .services{
         grid-template-columns: 1fr;
-        padding-bottom: 12rem;
+        padding-bottom: 30vh;
         padding-inline: 10%;
     }
     .service{
 
         
         transition : all 200ms;
+    }
+
+    .service{
+        h4{
+            font-size : 1.3rem;
+            
+        }
     }
     
     .delivery{
