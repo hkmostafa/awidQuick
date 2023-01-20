@@ -26,6 +26,15 @@ $green : hsl(132, 42%, 43%);
     right : 3rem;
     z-index: 11111;
     top : 10px;
+
+    h4{
+        font-family: $JosefinLight;
+        font-size: 1rem;    
+    
+    }
+    h4:hover{
+        color : $green
+    }
 }
 .mobilenavbar{
     display: none;
@@ -42,14 +51,7 @@ $green : hsl(132, 42%, 43%);
 .icontext{
     display: none;
 }
- h4{
-    font-family: $JosefinLight;
-    font-size: clamp(1rem, 0.8241rem + 0.3678vw, 1.1rem);
 
-}
-h4:hover{
-    color : $green
-}
 
 .socials{
     display: flex;
@@ -137,7 +139,7 @@ h4:hover{
         position : absolute;
         visibility: hidden;
         opacity : 0;
-       
+        
 
     }
 
@@ -150,7 +152,7 @@ h4:hover{
         gap : 1rem;
         grid-template-columns: 1fr;
         background: linear-gradient(180deg, rgba(255,255,255,0.95) 50%, rgba(252,254,252,0) 100%);        position : fixed;
-        padding-inline: 9%;
+        padding-inline: 15%;
         padding-block-start : 6rem;
         padding-block-end: 18rem;
         z-index: 1111;
@@ -158,9 +160,13 @@ h4:hover{
         width: 100vw;
        
         opacity :1;
-
         h4{
-            font-size: 1rem;
+            font-family: $JosefinLight;
+            font-size: 1rem;    
+        
+        }
+        h4:hover{
+            color : $green
         }
     }
     .mobilenavbar{

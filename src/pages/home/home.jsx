@@ -4,8 +4,11 @@ import { useState,useRef, useEffect} from 'react'
 import {MdOutlineShoppingCart} from 'react-icons/md'
 import Ads from '../../components/carousel/carousel';
 import {BsFillArrowRightCircleFill, BsFillArrowDownCircleFill} from 'react-icons/bs'
-
+import { useNavigate } from 'react-router-dom';
+import ReactPlayer from 'react-player'
+// Render a YouTube video player
 function Home(){
+  const navigate = useNavigate();
     const openWhatsapp = ()=>{
         window.open('https://api.whatsapp.com/send/?phone=212661461262&text&type=phone_number&app_absent=0')
     }
@@ -62,7 +65,7 @@ function Home(){
 
         <div  className={`step ${stepsVisible?'  shown':''}`}>
           <h4>Etape 2</h4>
-          <h2>Demander</h2>
+          <h2>Commander</h2>
         </div>
         <span className={`arrow ${stepsVisible?'  shown':''}`}> <BsFillArrowRightCircleFill fill='#3fc851' size={50}/></span>
         <span className={`arrowmobile ${stepsVisible?'  shown':''}`}> <BsFillArrowDownCircleFill fill='#3fc851' size={50}/></span>
@@ -92,15 +95,35 @@ function Home(){
        <div className="carousel"><Ads/> </div>
           
       </div> 
-     
+      <div className='videosection'>
+           
+           <div className='videoplayer'>
+           <ReactPlayer url='videos/Awidquick.mp4'  playing={true} loop={true} muted={true} volume={0.2}
+           width={'100%'}
+           config={{
+            file : {
+              forceVideo:true
+
+            }
+           }}
+         />
+           </div>
+           <div className='aboutus'>
+             <h2>A propos de nous</h2>
+             <h4>Bienvenue chez notre entreprise de livraison, où nous nous sommes fiers de proposer des services de livraison <span className='highlight'>rapides</span> et <span className='highlight'>fiables</span> à nos clients. Nous comprenons l'importance de vous faire parvenir vos colis à temps, c'est pourquoi nous proposons une gamme d'options de livraison adaptées à vos besoins</h4>
+         </div>
+      
+       
+ 
+         </div>
         <div className='servicesSection'>
-          <div><h2 className='secondaryTitle' style={{paddingTop : 50}}>
+          <div><h2 className='secondaryTitle' >
         Nos specialités
           </h2> 
           <h4>Plus de temps perdu à faire les courses, commandez en ligne et faites-vous livrer à domicile</h4></div>
         
           <div className='services'>
-            <div className="service">
+            <div className="service" onClick={()=>{navigate('/restaurants')}}>
               <h4>Food</h4>
               <h5>Consultez nos menus et choisissez ce que vous désirez</h5>
             </div>
@@ -116,6 +139,7 @@ function Home(){
               </div>
           </div>
         </div>
+       
         <div className="delivery">
           <img src='/images/livreur.jpg'/>
           <div className='delivery-text'>

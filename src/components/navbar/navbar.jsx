@@ -6,12 +6,14 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { Link, useLocation } from 'react-router-dom/dist'
 import './navbar.scss'
 import { useNavigate } from 'react-router-dom/dist'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 function Navbar(){
   const navigate = useNavigate()
   const location = useLocation();
-  const [expanded, setExpanded]=useState()
-
+  const [expanded, setExpanded]=useState(false)
+  useEffect(()=>{
+    setExpanded(false)
+  },[location])
   return  (    
     <> 
       

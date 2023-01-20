@@ -18,9 +18,8 @@ function Restaurants(){
     async function getRestaurants(){
         const restaurants =  await axios.get('http://165.22.116.57:3000/restaurant/restaurantVitrine');
         setRestaurants(restaurants.data);
-
-
     }
+    
     useEffect(()=>{
         getRestaurants();
     },[])
