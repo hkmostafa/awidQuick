@@ -12,27 +12,54 @@ function Home(){
     const openWhatsapp = ()=>{
         window.open('https://api.whatsapp.com/send/?phone=212661461262&text&type=phone_number&app_absent=0')
     }
-    const steps = useRef()
+    const steps = useRef(null)
+    const delivery = useRef(null)
+    const [deliveryVisible, setDeliveryVisible]=useState();
+
     const [stepsVisible, setStepsVisible]=useState();
     console.log(stepsVisible);
+    console.log(deliveryVisible);
+
     useEffect(()=>{
-      const observer = new IntersectionObserver((entries)=>{
-        const entry = entries[0];
+      const stepsobserver = new IntersectionObserver((entries)=>{
+        entries.forEach(entry => {
+          if (entry.boundingClientRect.top > 0) {
+            if (entry.isIntersecting) {
+              setStepsVisible(true);
+            }
+            else{
+              setStepsVisible(false)
+            }
+        }
+        });
        
-        if (entry.boundingClientRect.top > 0) {
+      })
+      stepsobserver.observe(steps.current);
+
+      const deliveryObserver = new IntersectionObserver((entries)=>{
+        entries.forEach(entry => {
+          if (entry.boundingClientRect.top > 0) {
+
           if (entry.isIntersecting) {
-            setStepsVisible(true);
+            setDeliveryVisible(true);
           }
           else{
-            setStepsVisible(false)
+            setDeliveryVisible(false)
           }
-      }})
-      observer.observe(steps.current);
+          }
+      });
+      })
+      deliveryObserver.observe(delivery.current)
+
       return () => {
-        if(steps.current){  observer.unobserve(steps.current);
-        }
+        deliveryObserver.disconnect();
+ 
+          stepsobserver.disconnect();
+        
       };
-    },[stepsVisible])
+
+
+    },[])
     return(
     <div className="App">
 
@@ -82,7 +109,25 @@ function Home(){
         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="shape-fill"></path>
     </svg>
     </div>
-      <div className='command'>
+    <div className='videosection'>
+           
+           <div className='videoplayer'>
+           <ReactPlayer url='videos/Awidquick.mp4'  playing={true} loop={true} muted={true} volume={0.2}
+           width={'100%'} height={'100%'}
+           config={{
+            file : {
+              forceVideo:true
+
+            }
+           }}
+         />
+           </div>
+           <div className='aboutus'>
+             <h2>A propos de nous</h2>
+             <h4>Bienvenue chez notre entreprise de livraison, où nous nous sommes fiers de proposer des services de livraison <span className='highlight'>rapides</span> et <span className='highlight'>fiables</span> à nos clients. Nous comprenons l'importance de vous faire parvenir vos colis à temps, c'est pourquoi nous proposons une gamme d'options de livraison adaptées à vos besoins.</h4>
+         </div>
+         </div>
+      <div className='command' >
         <div>
           
           <h2>Livraison Express</h2>
@@ -95,27 +140,8 @@ function Home(){
        <div className="carousel"><Ads/> </div>
           
       </div> 
-      <div className='videosection'>
-           
-           <div className='videoplayer'>
-           <ReactPlayer url='videos/Awidquick.mp4'  playing={true} loop={true} muted={true} volume={0.2}
-           width={'100%'}
-           config={{
-            file : {
-              forceVideo:true
-
-            }
-           }}
-         />
-           </div>
-           <div className='aboutus'>
-             <h2>A propos de nous</h2>
-             <h4>Bienvenue chez notre entreprise de livraison, où nous nous sommes fiers de proposer des services de livraison <span className='highlight'>rapides</span> et <span className='highlight'>fiables</span> à nos clients. Nous comprenons l'importance de vous faire parvenir vos colis à temps, c'est pourquoi nous proposons une gamme d'options de livraison adaptées à vos besoins</h4>
-         </div>
-      
-       
  
-         </div>
+
         <div className='servicesSection'>
           <div><h2 className='secondaryTitle' >
         Nos specialités
@@ -140,7 +166,7 @@ function Home(){
           </div>
         </div>
        
-        <div className="delivery">
+        <div className={`delivery ${deliveryVisible && 'animate__animated animate__fadeIn animate__slow'}`} ref={delivery} >
           <img src='/images/livreur.jpg'/>
           <div className='delivery-text'>
             <h2>Toujours à votre service !</h2>

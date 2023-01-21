@@ -95,6 +95,8 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
    background-size: contain;
 }
 
+
+
 .step{
     text-align: center;
     border-radius: 0.5rem;
@@ -321,6 +323,9 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
         color : black;
         padding-bottom : 1rem;
 
+
+          
+           
         font-family: $JosefinBold;
         font-size: clamp(1.5rem, 0.2414rem + 3.6782vw, 3.4rem);
 
@@ -362,24 +367,22 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
 }
 
 .videosection{
-    margin-inline : 8rem;
-    margin-block-end : 5%;
-    display : grid;
-    gap : 2rem;
-    grid-template-columns: 45% auto;
     
+    display : grid;
+    gap : 4rem;
+    padding-block-start: 5%;
+    padding-inline: 8rem;
+    grid-template-columns: 45% auto;
+    background-color: $limePrimary;
     .videoplayer{
         overflow: hidden;
-        border-radius: 1rem;
-        max-height: fit-content;
-        align-self: baseline;
-    }
+        align-self: center;
+        background-color: $limePrimary;
+    }   
     .aboutus{
         display : grid;
-        border-radius: 1rem;
         color : white;
         background-color:  $limePrimary;
-        padding-inline: 10%;
         padding-block : 3rem;
         gap :1rem;
 
@@ -395,6 +398,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
             line-height: 90%;
         }
         h4{
+            padding-top : 1rem;
             font-family: $ralewayRegular;
             font-size :clamp(1rem, -0.4552rem + 2.2069vw, 1.4rem);
 
@@ -438,20 +442,43 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
 
 
 @media(max-width : 1100px){
+        
+
+    .servicesSection{
+     
+
+       .secondaryTitle{
+        font-size: 1.9rem;
+        padding-top : 5%;
+       }
+       
+    
+    }
+
+    .command{
+        grid-template-columns: 1fr 1fr;
+        padding-block : 3rem;
+        gap : 2rem;
+        .carousel{
+            width: 90%;
+        }
+    }
     .videosection{
         grid-template-columns: 1fr;
-        margin-inline : 0rem;
+        gap : 0;
+        
         margin-block-end : 0;
-        padding-inline: 10%;
         padding-block-start : 0;
-        padding-block-end: 0;
+        .aboutus{
+            grid-row-start : 1;
+        }
+
+        .videoplayer{
+            justify-self: start;
+        }
     }
     
-    .aboutus{
-        justify-self: center;
-        grid-row-start : 1;
-        max-width: 650px;
-    }
+  
 
 }
 
@@ -498,7 +525,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
         
     }
     .step {
-
+        padding-block: 1.5rem;
         h4{
             font-size: 1.3rem;
         }
@@ -523,9 +550,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     .command{
         padding-inline: 12%;
         grid-template-columns: 1fr;
-        padding-block-start : 2rem;
         gap: 10%;
-
         h2{
             font-size : 1.8rem;
         }
@@ -545,17 +570,19 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     .servicesSection{
         gap : 6%;
         padding-inline : 12%;
-
+        padding-block-start : 10%;
        .secondaryTitle{
         font-size: 1.9rem;
+        padding-top : 0;
        }
        
     
     }
     .videosection{
         gap : 0;
-        padding-block : 5%;
-       
+        padding-inline: 12%;
+
+
         .aboutus{
             justify-self: center;
             grid-row-start : 1;
@@ -564,7 +591,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
 
             }
             h4{
-                font-size: clamp(0.9rem, 0.5808rem + 0.8767vw, 1rem);
+                font-size: clamp(1rem, 0.5808rem + 0.8767vw, 1.1rem);
 
             }
         }
