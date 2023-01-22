@@ -7,6 +7,7 @@ function Ads () {
             <Carousel showArrows={true} 
             autoPlay={true}  
             infiniteLoop={true}
+            showStatus={false}
             showIndicators={false} 
             showThumbs={false}
             thumbWidth={200}

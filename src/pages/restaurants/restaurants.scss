@@ -22,12 +22,18 @@ $yellowGreen :#FFDA84;
         padding-block-start : 12rem;
         padding-inline: 10%;
         padding-block-end : 10%;
+        display : flex;
+        justify-content: space-between;
+        align-items: baseline;
         h3{
             font-size: 3rem;
             font-family: $JosefinRegular;
             color : white
         }
+
+     
     }    
+
     .cards_container{
         display : grid;
         padding-inline : 10%;
@@ -89,20 +95,27 @@ $yellowGreen :#FFDA84;
     }
 
     .menu{
-        position: absolute;
+        position: fixed;
+        top : 12vh;
         border-radius: 1rem;
-
-        top: 20%;
         margin-inline : 20%;
-        padding : 2%;
-        background-color: hsla(42, 100%, 76%, 0.8);
-
+        margin-block : 2rem;
+            background-color: hsla(42, 100%, 76%, 1);
         .closebutton{
             position: absolute;
-            top : 0;
-            right : 3px;   
+            z-index : 11111;
+            top : -20px;
+            border-radius: 50%;
+            border : 3px solid $limePrimary;
+            padding-top : 5px;
+            padding-inline: 5px;
+            right : 10%;   
+            background-color: white;
             cursor: pointer;   
-            
+            transition : background-color 300ms ease;
+        }
+        .closebutton:hover{
+            background-color :$limePrimary;
         }
     }
     
@@ -122,7 +135,6 @@ $yellowGreen :#FFDA84;
     .menu{
         margin-inline : 10%;
 
-        padding : 2%;
     }
 }
 
