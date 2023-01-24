@@ -10,12 +10,15 @@ function Restaurants(){
     const [menu, setMenu]= useState([]);
     const [currentRestau, setCurrentRestau ]= useState(null);
     const [MenuIsOpen, SetMenuIsOpen] = useState(false);
-    
+    const [paginate, setPaginate]=useState(8)
+    const loadMore = (e) => {
+      setPaginate((prevValue) => prevValue + 8);
+    };
+
     function openMenu(restau) {
         SetMenuIsOpen(true);
         setCurrentRestau(restau)
         getMenus(restau.id)
-        console.log(restau)
       }
     function closeModal() {
         SetMenuIsOpen(false);
@@ -43,7 +46,7 @@ function Restaurants(){
            
             </div>
             <div className="cards_container">
-                {restaurants && restaurants.map((restau)=>{
+                {restaurants && restaurants.slice(0,paginate).map((restau)=>{
                     return(   <div className="restaucard" key={restau.id} onClick={()=>openMenu(restau)} >
                     <img src={`http://165.22.116.57:3000/${restau.logo}`} className='restaulogo' />
                     <div className='bannertext'> 
@@ -65,12 +68,14 @@ function Restaurants(){
         contentLabel="Menu"
         className={'menu'}
       >   
-
+    
         <span className='closebutton' onClick={closeModal}><GrFormClose size={30} /></span>
             <Menus menu={menu}/>
       </Modal>}
-        
-      
+        {restaurants>6 &&
+         <button className='loadmore'  onClick={loadMore}>Afficher plus ...</button>
+        }
+       
         </div>  
     )
 }

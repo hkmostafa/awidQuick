@@ -14,7 +14,7 @@ function AwidMap() {
     initialViewState={{
               latitude: 30.3987125,
               longitude:  -9.5622969,
-              zoom: 11
+              zoom: 12
             }}
 
             
@@ -22,6 +22,7 @@ function AwidMap() {
     mapboxAccessToken  = "pk.eyJ1IjoiamVlenphcyIsImEiOiJjbDNyYmtjbjYwNnZoM2NvMDluczhhcHFrIn0.LTXCT43tTenja5zSBBThbg"
     minZoom={11}
     maxZoom={15}
+    fog={true}
     doubleClickZoom={false}
     style={{borderRadius : 10, boxShadow: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
     }}

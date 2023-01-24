@@ -317,7 +317,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     display : grid;
     padding-inline : 10%;
     background-color: #ffffff;
-    gap :10%;
+    gap :3rem;
 }
 .servicesSection  .secondaryTitle{
         color : black;
@@ -341,7 +341,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     display : grid;
     grid-template-columns: repeat(3,1fr);
     gap : 10%;
-    padding-bottom : 7rem;
+    padding-bottom : 5rem;
     padding-inline: 2%;
 }
 
@@ -375,11 +375,19 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     grid-template-columns: 45% auto;
     background-color: $limePrimary;
     .videoplayer{
+        visibility: hidden;
+    }
+    .videoplayer.showvid{
+        visibility: visible;
         overflow: hidden;
         align-self: center;
         background-color: $limePrimary;
     }   
     .aboutus{
+        visibility: hidden;
+    }
+    .aboutus.showvid{
+        visibility: visible;
         display : grid;
         color : white;
         background-color:  $limePrimary;
@@ -454,7 +462,11 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
        
     
     }
+    .services{
+      
+        padding-bottom : 4rem;
 
+    }
     .command{
         grid-template-columns: 1fr 1fr;
         padding-block : 3rem;
@@ -568,7 +580,7 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
     
 
     .servicesSection{
-        gap : 6%;
+        gap : 3rem;
         padding-inline : 12%;
         padding-block-start : 10%;
        .secondaryTitle{
@@ -577,6 +589,12 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
        }
        
     
+    }
+
+    .services{
+      
+        padding-bottom :8rem;
+
     }
     .videosection{
         gap : 0;
@@ -600,7 +618,6 @@ font-size: clamp(2rem, 1.1207rem + 1.8391vw, 2.5rem);
 
     .services{
         grid-template-columns: 1fr;
-        padding-bottom: 30vh;
         padding-inline: 10%;
     }
     .service{

@@ -14,14 +14,17 @@ $white : 'white';
 $black : 'black';
 $yellowGreen :#FFDA84;
 
-
+    .container{
+        display : grid;
+        margin-bottom : 2rem;
+    }
 
     .title_container{
         background: rgb(63,200,81);
-        background: linear-gradient(180deg, rgba(63,200,81,1) 42%, rgba(252,254,252,1) 95%);
-        padding-block-start : 12rem;
+        background: linear-gradient(180deg, rgba(63,200,81,1) 60%, rgba(252,254,252,1) 95%);
+        padding-block-start : 10rem;
         padding-inline: 10%;
-        padding-block-end : 10%;
+        padding-block-end : 6%;
         display : flex;
         justify-content: space-between;
         align-items: baseline;
@@ -36,19 +39,17 @@ $yellowGreen :#FFDA84;
 
     .cards_container{
         display : grid;
-        padding-inline : 10%;
-        margin-block-end : 10%;
+        padding-inline : 12%;
+        margin-block-end : 10vh;
         grid-template-columns: repeat(3,1fr);
-
-        gap : 10%;
+        gap : 4rem;
         .restaucard{    
-            
+            padding-block-start : 2rem;
+            background : transparent;
             text-align: center;
             grid-template-rows: 30% auto;
-            box-shadow: rgba(0, 0, 0, 0.5) 12px 25px 50px -12px;
             border-bottom-right-radius: 1rem;
             border-bottom-left-radius: 1rem;
-            margin-bottom : 10%;
             transition : transform 300ms;
             .restaulogo{
                 position : relative;
@@ -61,8 +62,9 @@ $yellowGreen :#FFDA84;
             }
             .bannertext{
                 overflow: hidden;
-
-              
+                box-shadow: rgba(0, 0, 0, 0.5) 12px 25px 50px -12px;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;              
                 display : grid;
                 img{
                   
@@ -72,8 +74,7 @@ $yellowGreen :#FFDA84;
              
                 h4{
                     font-family: $ralewayBold;
-                    border-bottom-left-radius: 1rem;
-                    border-bottom-right-radius: 1rem;
+                 
 
                     background-color:$yellowGreen;
                     padding-block-start : 10%;
@@ -93,7 +94,27 @@ $yellowGreen :#FFDA84;
         }
         
     }
+    .loadmore{
+        width: fit-content;
 
+
+        background-color: $yellowGreen;
+        color : black;
+        font-family: $ralewayBold;
+        border : none;
+        border-radius: 1rem;
+        padding-block : 1rem;
+
+        padding-inline: 2rem;
+        transition : all 200ms ease-in;
+        box-shadow: rgba(0, 0, 0, 0.5) 12px 25px 50px -12px;
+        justify-self: center;
+    }
+
+    .loadmore:hover{
+        background-color : $limePrimary;
+        color : white;
+    }
     .menu{
         position: fixed;
         top : 12vh;
@@ -121,15 +142,16 @@ $yellowGreen :#FFDA84;
     
 @media(max-width : 1024px){
     .title_container{
-        padding-block-end : 15%;
+        padding-block-end : 10%;
 
     }
 
     .cards_container{
         grid-template-columns: 1fr 1fr;
         padding-inline: 5%;
-        padding-block-end: 15% ;
         padding-inline: 10%;
+        margin-block-end : 10vh;
+
     }
 
     .menu{
@@ -141,12 +163,10 @@ $yellowGreen :#FFDA84;
 
 
 @media(max-width : 765px){
-    .container{
-        margin-bottom :50%
-    }
+  
     
     .title_container{
-
+    
         padding-block-start : 12rem;
         padding-inline: 10%;
         padding-block-end : 20%;
@@ -157,9 +177,10 @@ $yellowGreen :#FFDA84;
         }
     }    
     .cards_container{
+        gap :2rem;
+
         grid-template-columns: 1fr ;
-        padding-inline: 10%;
-        padding-block-end: 60%;
+        padding-inline: 15%;
         .restaucard{
             margin-bottom: 0;
         }

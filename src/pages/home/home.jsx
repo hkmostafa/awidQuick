@@ -12,13 +12,13 @@ function Home(){
     const openWhatsapp = ()=>{
         window.open('https://api.whatsapp.com/send/?phone=212661461262&text&type=phone_number&app_absent=0')
     }
+    const videosection = useRef(null)
     const steps = useRef(null)
     const delivery = useRef(null)
     const [deliveryVisible, setDeliveryVisible]=useState();
-
+    const [videoVisible, setVideoVisible]=useState();
     const [stepsVisible, setStepsVisible]=useState();
-    console.log(stepsVisible);
-    console.log(deliveryVisible);
+    
 
     useEffect(()=>{
       const stepsobserver = new IntersectionObserver((entries)=>{
@@ -26,6 +26,7 @@ function Home(){
           if (entry.boundingClientRect.top > 0) {
             if (entry.isIntersecting) {
               setStepsVisible(true);
+              stepsobserver.unobserve(entry.target)
             }
             else{
               setStepsVisible(false)
@@ -36,12 +37,28 @@ function Home(){
       })
       stepsobserver.observe(steps.current);
 
+      const videosectionobserver = new IntersectionObserver((entries)=>{
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setVideoVisible(true);
+              videosectionobserver.unobserve(entry.target)
+            }
+            else{
+              setVideoVisible(false)
+            }
+        }
+        );
+       
+      },{threshold : 0.5})
+      videosectionobserver.observe(videosection.current);
+
       const deliveryObserver = new IntersectionObserver((entries)=>{
         entries.forEach(entry => {
-          if (entry.boundingClientRect.top > 0) {
+          if (entry.boundingClientRect.top >0) {
 
           if (entry.isIntersecting) {
             setDeliveryVisible(true);
+            deliveryObserver.unobserve(entry.target)
           }
           else{
             setDeliveryVisible(false)
@@ -53,7 +70,7 @@ function Home(){
 
       return () => {
         deliveryObserver.disconnect();
- 
+        videosectionobserver.disconnect();
           stepsobserver.disconnect();
         
       };
@@ -109,9 +126,9 @@ function Home(){
         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" className="shape-fill"></path>
     </svg>
     </div>
-    <div className='videosection'>
+    <div className='videosection' ref={videosection} >
            
-           <div className='videoplayer'>
+           <div className={`videoplayer  ${videoVisible && 'animate__animated animate__bounceInLeft showvid '}`} >
            <ReactPlayer url='videos/Awidquick.mp4'  playing={true} loop={true} muted={true} volume={0.2}
            width={'100%'} height={'100%'}
            config={{
@@ -122,7 +139,7 @@ function Home(){
            }}
          />
            </div>
-           <div className='aboutus'>
+           <div className={`aboutus  ${videoVisible && 'animate__animated animate__fadeIn animate__slow showvid'}`} > 
              <h2>A propos de nous</h2>
              <h4>Bienvenue chez notre entreprise de livraison, où nous nous sommes fiers de proposer des services de livraison <span className='highlight'>rapides</span> et <span className='highlight'>fiables</span> à nos clients. Nous comprenons l'importance de vous faire parvenir vos colis à temps, c'est pourquoi nous proposons une gamme d'options de livraison adaptées à vos besoins.</h4>
          </div>
@@ -166,7 +183,7 @@ function Home(){
           </div>
         </div>
        
-        <div className={`delivery ${deliveryVisible && 'animate__animated animate__fadeIn animate__slow'}`} ref={delivery} >
+        <div className={`delivery ${deliveryVisible && 'animate__animated animate__fadeIn '}`} ref={delivery} >
           <img src='/images/livreur.jpg'/>
           <div className='delivery-text'>
             <h2>Toujours à votre service !</h2>
