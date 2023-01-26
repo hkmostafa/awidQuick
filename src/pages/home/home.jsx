@@ -6,6 +6,8 @@ import Ads from '../../components/carousel/carousel';
 import {BsFillArrowRightCircleFill, BsFillArrowDownCircleFill} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player'
+import Navbar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer';
 // Render a YouTube video player
 function Home(){
   const navigate = useNavigate();
@@ -78,6 +80,8 @@ function Home(){
 
     },[])
     return(
+      <>
+      <Navbar/>
     <div className="App">
 
       
@@ -194,6 +198,8 @@ function Home(){
         
   
     </div>
+    <Footer/>
+    </>
     )
 }
 

@@ -1,0 +1,102 @@
+
+//fonts
+$JosefinLight : 'Josefin Light';
+$JosefinBold : 'Josefin Bold';
+$JosefinRegular : 'Josefin Regular';
+
+$ralewayLight : 'ralewayLight';
+$ralewayBold : 'ralewayBold';
+
+$ralewayRegular : 'ralewayRegular';
+//Colors : 
+
+$limePrimary : #3fc851;
+$limeSecondary : #AAE3B1;
+$white : 'white';
+$black : 'black';
+$yellowGreen :#FFDA84;
+
+
+
+    
+    .addRestau{
+        display : grid;
+        gap :1rem;   
+        background-color : white;
+        padding-inline : 5rem;
+        padding-block : 3rem;
+        border-radius : 1rem;
+        img{
+            justify-self: center;
+            align-self: baseline;
+        } 
+        .gridform{
+            display: grid;
+            gap : 1.2rem;
+            .forminput{
+                display: grid;
+                gap : 0.5rem;
+                label{
+                    font-family: $ralewayRegular;
+
+                    
+                }
+            }
+            .forminput.localisation{
+                grid-template-columns: 1fr 1fr;
+                label{
+                    grid-column: span 2;
+                }
+                .forminput{
+                    grid-template-columns: 1fr;
+                    label{
+                        grid-column: 1;
+                    }
+                   
+                  input{
+                    width: 100%;
+                  }
+                }
+            }
+            input{
+                border-radius: 0.3rem;
+                padding-inline : 1rem;
+                padding-block : 0.3rem;
+                width: 100%;
+                font-family: $JosefinLight;
+                border : $limePrimary 2px solid;
+                background: white;
+            }
+            select{
+                border-radius: 0.3rem;
+                padding-inline : 1rem;
+                padding-block : 0.6rem;
+                width: 100%;
+                font-family: $JosefinLight;
+                border : $limePrimary 2px solid;
+                background: white;
+            }
+            input[type="submit"]{
+                font-family: $ralewayRegular;
+            padding-block : 0.5rem;
+               color : white;
+               border : none;
+               background-color: $limePrimary;
+               transition: background-color 300ms ease-out;
+            }
+        
+            input[type="submit"]:hover{
+                background-color: #3f9c51;
+            }
+            input[type="file"]{
+                cursor: pointer;
+            }
+          
+            input[type="file"]::-webkit-file-upload-button{
+               display: none;
+
+            }
+           
+        }
+    }
+

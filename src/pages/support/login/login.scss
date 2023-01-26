@@ -1,0 +1,75 @@
+
+//fonts
+$JosefinLight : 'Josefin Light';
+$JosefinBold : 'Josefin Bold';
+$JosefinRegular : 'Josefin Regular';
+
+$ralewayLight : 'ralewayLight';
+$ralewayBold : 'ralewayBold';
+
+$ralewayRegular : 'ralewayRegular';
+//Colors : 
+
+$limePrimary : #3fc851;
+$limeSecondary : #AAE3B1;
+$white : 'white';
+$black : 'black';
+$yellowGreen :#FFDA84;
+
+
+.container{
+    background-color: $limePrimary;
+    min-height : 99.9vh;
+    align-content: center;
+    justify-content: center;
+
+    .login{
+        display : grid;
+        gap :1rem;   
+        background-color : white;
+        padding-inline : 5rem;
+        padding-block : 3rem;
+        border-radius : 1rem;
+        img{
+            justify-self: center;
+            align-self: baseline;
+        } 
+        .loginform{
+            display: grid;
+            gap : 1.2rem;
+            .forminput{
+                display: grid;
+                gap : 0.5rem;
+                label{
+                    font-family: $ralewayRegular;
+
+                    
+                }
+            }
+            input{
+                border-radius: 0.3rem;
+                padding-inline : 1rem;
+                padding-block : 0.3rem;
+
+                font-family: $JosefinLight;
+
+                border : $limePrimary 2px solid;
+                width: 100%;
+                background: white;
+            }
+            input[type="submit"]{
+                font-family: $ralewayRegular;
+            padding-block : 0.5rem;
+               color : white;
+               border : none;
+               background-color: $limePrimary;
+               transition: background-color 300ms ease-out;
+            }
+            input[type="submit"]:hover{
+                background-color: #3f9c51;
+            }
+        }
+    }
+
+   
+}

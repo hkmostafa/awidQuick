@@ -4,6 +4,8 @@ import './restaurants.scss';
 import {GrFormClose} from 'react-icons/gr'
 import Modal from 'react-modal';
 import Menus from '../../components/carousel/menuCarousel';
+import Navbar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer';
 function Restaurants(){
   
     const [restaurants, setRestaurants] = useState();
@@ -39,6 +41,8 @@ function Restaurants(){
     },[])
 
     return(
+      <>
+      <Navbar/>
         <div className="container">
             <div className='title_container'>
             <h3>Decouvre nous restaurants </h3>
@@ -76,7 +80,9 @@ function Restaurants(){
          <button className='loadmore'  onClick={loadMore}>Afficher plus ...</button>
         }
        
-        </div>  
+        </div> 
+      <Footer/>
+      </>
     )
 }
 

@@ -22,7 +22,6 @@ function AwidMap() {
     mapboxAccessToken  = "pk.eyJ1IjoiamVlenphcyIsImEiOiJjbDNyYmtjbjYwNnZoM2NvMDluczhhcHFrIn0.LTXCT43tTenja5zSBBThbg"
     minZoom={11}
     maxZoom={15}
-    fog={true}
     doubleClickZoom={false}
     style={{borderRadius : 10, boxShadow: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px"
     }}
