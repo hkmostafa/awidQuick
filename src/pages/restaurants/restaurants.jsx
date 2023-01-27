@@ -1,13 +1,13 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import './restaurants.scss';
-import {GrFormClose} from 'react-icons/gr'
+import {GrFormClose} from 'react-icons/gr';
 import Modal from 'react-modal';
-import Menus from '../../components/carousel/menuCarousel';
+
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
+import Menus from '../../components/carousel/menuCarousel';
 function Restaurants(){
-  
     const [restaurants, setRestaurants] = useState();
     const [menu, setMenu]= useState([]);
     const [currentRestau, setCurrentRestau ]= useState(null);
@@ -45,7 +45,7 @@ function Restaurants(){
       <Navbar/>
         <div className="container">
             <div className='title_container'>
-            <h3>Decouvre nous restaurants </h3>
+            <h3>Découvre nos restaurants </h3>
             
            
             </div>
@@ -74,7 +74,9 @@ function Restaurants(){
       >   
     
         <span className='closebutton' onClick={closeModal}><GrFormClose size={30} /></span>
-            <Menus menu={menu}/>
+        <Menus menu={menu}/>
+
+           
       </Modal>}
         {restaurants>6 &&
          <button className='loadmore'  onClick={loadMore}>Afficher plus ...</button>

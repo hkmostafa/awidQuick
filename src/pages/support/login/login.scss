@@ -17,12 +17,13 @@ $black : 'black';
 $yellowGreen :#FFDA84;
 
 
-.container{
+.logincontainer{
+    display : grid;
     background-color: $limePrimary;
     min-height : 99.9vh;
     align-content: center;
     justify-content: center;
-
+    
     .login{
         display : grid;
         gap :1rem;   

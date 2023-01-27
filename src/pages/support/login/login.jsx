@@ -6,7 +6,7 @@ function Login() {
     const onSubmit = data => console.log(data);
 
     return (
-        <div className="container">
+        <div className="logincontainer">
             <div className="login">
             <img src={'images/greenlogo.png'} width={120}/>
 

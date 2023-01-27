@@ -1,0 +1,24 @@
+
+//fonts
+$JosefinLight : 'Josefin Light';
+$JosefinBold : 'Josefin Bold';
+$JosefinRegular : 'Josefin Regular';
+
+$ralewayLight : 'ralewayLight';
+$ralewayBold : 'ralewayBold';
+
+$ralewayRegular : 'ralewayRegular';
+//Colors : 
+
+$limePrimary : #3fc851;
+$limeSecondary : #AAE3B1;
+$white : 'white';
+$black : 'black';
+$yellowGreen :#FFDA84;
+
+
+.dashboardcontainer{
+    display : grid;
+    padding-inline : 10%;
+    grid-template-columns: repeat(3,1fr);
+}

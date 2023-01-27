@@ -1,0 +1,40 @@
+
+$JosefinLight : 'Josefin Light';
+$JosefinBold : 'Josefin Bold';
+$JosefinRegular : 'Josefin Regular';
+$dancingBold : 'Dancing Bold';
+$dancingRegular : 'Dancing Regular';
+
+//Colors : 
+
+$limePrimary : #3fc851;
+$limeSecondary : #AAE3B1;
+$white : 'white';
+$black : 'black';
+$yellowGreen :#FFDA84;
+$green : hsl(132, 42%, 43%);
+
+
+
+.dashboardnav{
+    background-color: $limePrimary;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3rem;
+    align-items: center;
+    .navigation{
+        color : white;
+        display: flex;
+        gap : 3rem;
+        h4{
+            color : white;
+            font-family: $JosefinLight;
+            font-size : 1.1rem;
+        }
+    }
+    h4{
+        color : white;
+        font-family: $JosefinLight;
+        font-size: 1.3rem;
+    }
+}

@@ -25,7 +25,6 @@ function Home(){
     useEffect(()=>{
       const stepsobserver = new IntersectionObserver((entries)=>{
         entries.forEach(entry => {
-          if (entry.boundingClientRect.top > 0) {
             if (entry.isIntersecting) {
               setStepsVisible(true);
               stepsobserver.unobserve(entry.target)
@@ -34,7 +33,7 @@ function Home(){
               setStepsVisible(false)
             }
         }
-        });
+        );
        
       })
       stepsobserver.observe(steps.current);
@@ -86,7 +85,7 @@ function Home(){
 
       
       <div className='banner'>
-      <img src="/images/awidquick.png" alt=""  className='logo animate__animated animate__lightSpeedInLeft' />
+      <img src="/images/awidquick.png" alt="" width={'100%'} className='logo animate__animated animate__lightSpeedInLeft' />
       
         <div className='banner-text '>
           <h2 className='secondaryTitle  animate__animated animate__pulse animate__delay-1s animate__slower	 animate__infinite	'>
@@ -187,7 +186,7 @@ function Home(){
           </div>
         </div>
        
-        <div className={`delivery ${deliveryVisible && 'animate__animated animate__fadeIn '}`} ref={delivery} >
+        <div className={`delivery ${deliveryVisible && 'animate__animated animate__fadeIn animate__slow '}`} ref={delivery} >
           <img src='/images/livreur.jpg'/>
           <div className='delivery-text'>
             <h2>Toujours à votre service !</h2>

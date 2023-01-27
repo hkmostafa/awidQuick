@@ -1,6 +1,7 @@
+import React, { Suspense } from 'react';
 import './footer.scss';
-import AwidMap from '../map/map'
-import {BsFacebook,BsInstagram} from 'react-icons/bs'
+const AwidMap = React.lazy(()=>import('../map/map'));
+import {BsFacebook,BsInstagram} from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom/dist';
 
 
@@ -12,8 +13,8 @@ function Footer(){
         <div className='footer-left'>
         <img src="/images/greenlogo.png" alt="" onClick={()=>{navigate('/')}}/>
          <div className='download'>
-           <img src="/images/googleplay.png" alt="" />
-           <img src="/images/appstore.png" alt="" />
+           <img src="/images/googleplay.png" alt="" onClick={()=>{navigate('/')}}/>
+           <img src="/images/appstore.png" alt=""  onClick={()=>{navigate('/')}}/>
          </div>
         </div>
          <div className='footer-center'> 
@@ -31,7 +32,13 @@ function Footer(){
            
          </div>
        
-         <div className='footer-right'><AwidMap/></div>
+         <div className='footer-right'>
+         <Suspense fallback={<div style={{position : 'relative',top : 0, left : 0, bottom : 0, right : 0, margin:'auto' , fontFamily : 'Josefin Light'}}>Map encore de telechargement...</div>}>
+
+            <AwidMap/>
+        
+            </Suspense>
+          </div>
          </div> 
          
     )

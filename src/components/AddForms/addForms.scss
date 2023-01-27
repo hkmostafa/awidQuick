@@ -67,6 +67,15 @@ $yellowGreen :#FFDA84;
                 border : $limePrimary 2px solid;
                 background: white;
             }
+            select{
+                border-radius: 0.3rem;
+                padding-inline : 1rem;
+                padding-block : 0.6rem;
+                width: 100%;
+                font-family: $JosefinLight;
+                border : $limePrimary 2px solid;
+                background: white;
+            }
             input[type="submit"]{
                 font-family: $ralewayRegular;
             padding-block : 0.5rem;
